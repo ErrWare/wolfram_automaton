@@ -13,7 +13,7 @@ rules = {
     (False, False, False) : False,
 }
 
-# Generage based on rules
+# Generate based on rules
 def new_state(state):
     # Always pad state with two empty cells on either side
     # This allows any 3 cell rule to be realized
@@ -26,6 +26,15 @@ def new_state(state):
     ns.extend([False, False])
 
     return ns
+
+#Change the update rule
+def new_rule(key):
+    for x in range(0,2):
+        for y in range(0,2):
+            for z in range(0,2):
+                rules[(x==1,y==1,z==1)] = key%2 == 1
+                key = int(round(key / 2 - 0.1))
+
 
 # Number of epochs generated, this includes the initial state
 NUM_EPOCHS = 200
