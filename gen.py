@@ -38,6 +38,8 @@ def new_rule(key):
 
 # Number of epochs generated, this includes the initial state
 NUM_EPOCHS = 200
+# Initial rule
+new_rule(30)
 # Initial state
 cur_state = [False, False, True, False, False]
 # Create 2D array to store full generation history
